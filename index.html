@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Perfil Pessoal</title>
 </head>
+
 <body>
-    <h1>Ola</h1>
+    <div class="hero">
+        <video autoplay loop muted plays-inline class="back-video">
+            <source src="imagens/video.mp4" type="video/mp4">
+        </video>
+    <div class="quartel">
+        <img src="imagens/minhaimagem.jpg" alt="Imagem de Yago Carvalho de Souza">
+    </div>
+        <main>
+            <div class="nombre">Yago Carvalho de Souza<br>Ex Fuzileiro Naval</div>
+            <div class="button">
+                <button onclick="showLists()">Sobre mim</button>
+            </div>
+            <h1 id="h1-1" hidden>Coisas que gosto de fazer</h1>
+            <ul id="ul-1" hidden>
+                <li>Gosto de surfar, estar perto da natureza.</li>
+                <li>Leio bons livros sempre que posso.</li>
+                <li>Gosto de me sentir inteligente, sentir que estou a par de tudo.</li>
+            </ul>
+
+            <h3 id="h3-1" hidden>Coisas que pretendo fazer</h3>
+            <ol id="ol-1" hidden>
+                <li>Consolidar meus conhecimentos como investidor;</li>
+                <li>Melhorar meus aspectos como programador, e outros aspectos que me ajudarão a alcançar o objetivo;</li>
+                <li>Não ficar maluco.</li>
+            </ol>
+        </main>
+
+        <footer>
+            <a href="imagens/kk.jpg">Fale Comigo</a>
+        </footer>
+    </div>
+
+    <script>
+        function showLists() {
+    document.getElementById('h1-1').style.display = "block";
+    document.getElementById('ul-1').style.display = "block";
+    document.getElementById('h3-1').style.display = "block";
+    document.getElementById('ol-1').style.display = "block";
+}
+    </script>
 </body>
 </html>
