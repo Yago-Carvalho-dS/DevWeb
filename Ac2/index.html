@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commiting folder</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    
+
+  <!-- Título principal -->
+  <h1>Feedback</h1>
+
+  <section>
+    <form>
+      <!-- Dados pessoais -->
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Como encontrou -->
+      <label for="source">Como você encontrou meu perfil?</label>
+      <select id="source" name="source">
+        <option value="">Selecione uma opção</option>
+        <option value="google">Google</option>
+        <option value="social">Mídia social</option>
+        <option value="friend">Amigo</option>
+        <option value="outros">Outros</option>
+      </select>
+
+      <!-- Área de feedback -->
+      <label for="comentario">Deixe seu comentário ou feedback:</label>
+      <textarea id="comentario" name="comentario" rows="4"></textarea>
+
+      <!-- Botões de opção: Gostou do perfil? -->
+      <div class="radio-group">
+        <label>Você gostou do meu perfil?</label>
+      
+        <div class="radio-option">
+          <input type="radio" id="sim" name="gostou" value="sim">
+          <label for="sim">Sim</label>
+        </div>
+      
+        <div class="radio-option">
+          <input type="radio" id="nao" name="gostou" value="nao">
+          <label for="nao">Não</label>
+        </div>
+      
+        <div class="radio-option">
+          <input type="radio" id="talvez" name="gostou" value="talvez">
+          <label for="talvez">Talvez</label>
+        </div>
+      </div>
+      
+      <div class="checkbox-group">
+        <label>O que você gostou no perfil?</label>
+      
+        <div class="checkbox-option">
+          <input type="checkbox" id="design" name="gostos[]" value="design">
+          <label for="design">Design</label>
+        </div>
+      
+        <div class="checkbox-option">
+          <input type="checkbox" id="conteudo" name="gostos[]" value="conteudo">
+          <label for="conteudo">Conteúdo</label>
+        </div>
+      
+        <div class="checkbox-option">
+          <input type="checkbox" id="facilidade" name="gostos[]" value="facilidade">
+          <label for="facilidade">Facilidade de uso</label>
+        </div>
+      
+        <div class="checkbox-option">
+          <input type="checkbox" id="outros" name="gostos[]" value="outros">
+          <label for="outros">Outros</label>
+        </div>
+      </div>
+      
+
+      <!-- Botões -->
+      <button type="submit" class="submit-btn">Enviar</button>
+      <button type="reset" class="reset-btn">Redefinir</button>
+    </form>
+  </section>
+
+  <!-- Seção multimídia -->
+  <section>
+    <h2>Vídeo</h2>
+    <!-- Substitua o link abaixo por seu vídeo preferido do YouTube, Vimeo ou arquivo -->
+   <iframe width="100%" height="690" src="https://www.youtube.com/embed/2eQEHsGxbEo" title="数多の銀河を旅する4Kプラネタリウム｜睡眠用・作業用リラックス音楽｜Travel The Galaxy | Cosmic Relaxation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2>Áudio</h2>
+    <!-- Substitua o link abaixo por seu áudio favorito do SoundCloud ou outro -->
+    <audio controls>
+      <source src="perfect-fart.mp3" type="audio/mp3">
+      Seu navegador não suporta áudio.
+    </audio>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    Agradecido pelo seu Feedback!
+  </footer>
+
 </body>
 </html>
