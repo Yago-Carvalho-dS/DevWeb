@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTour Brasil</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header>
+    <h1>EcoTour</h1>
+    <nav>
+      <ul>
+        <div class="papo">
+        <li><a href="#pacotes">Pacotes</a></li>
+        <li><a href="#reserva">Reserva</a></li>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="pacotes">
+    <h2>Pacotes de Viagem</h2>
+    <div class="tabela-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Destino</th>
+            <th>Duração</th>
+            <th>Preço</th>
+            <th>Incluso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Anta Gorda - RS</td>
+            <td>7 dias</td>
+            <td>R$ 3.200</td>
+            <td>Hospedagem, trilha, guia</td>
+          </tr>
+          <tr>
+            <td>Curralinho - Pará</td>
+            <td>5 dias</td>
+            <td>R$ 2.700</td>
+            <td>Hospedagem, passeio de barco</td>
+          </tr>
+          <tr>
+            <td>Chupinguaia - Rondônia</td>
+            <td>3 dias</td>
+            <td>R$ 1.400</td>
+            <td>Trilha, hospedagem</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="reserva">
+    <h2>Formulário de Reserva</h2>
+    <form action="#" method="post">
+      <label for="nome">Nome completo:</label>
+      <input type="text" id="nome" name="nome" required minlength="3">
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="(99) 99999-9999">
+
+      <label for="destino">Destino:</label>
+      <select id="destino" name="destino" required>
+        <option value="">Selecione...</option>
+        <option value="amazonia">Floresta Amazônica</option>
+        <option value="pantanal">Pantanal</option>
+        <option value="chapada">Chapada dos Veadeiros</option>
+      </select>
+
+      <button type="submit">Enviar Reserva</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Tag reservada para direitos<br>2025 EcoTour Brasil. Turismo sustentável para um mundo melhor.</p>
+  </footer>
+
+</body>
+</html>
