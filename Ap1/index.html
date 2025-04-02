@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agência de Turismo</title>
-  <link rel="stylesheet" href="index.css"> <!-- caso deseje adicionar estilo -->
+  <link rel="stylesheet" href="index.css"> 
 </head>
 <body>
 
-  <!-- Cabeçalho com nome da empresa e menu de navegação -->
   <header>
     <h1>Agência de Turismo</h1>
     <nav>
@@ -20,23 +19,29 @@
     </nav>
   </header>
 
-  <!-- Seção de Serviços -->
   <section id="servicos">
     <h2>Serviços</h2>
     <p>Oferecemos pacotes de viagens personalizados, pensados de acordo com o seu perfil, preferências e orçamento. Do roteiro ao suporte durante a viagem, cuidamos de tudo para você.</p>
   </section>
 
-  <!-- Seção de Destinos Populares -->
-  <section id="destinos">
+  <section class="sectionlocais">
     <h2>Destinos Populares</h2>
-    <ul>
-      <li>Fernando de Noronha</li>
-      <li>Chapada Diamantina</li>
-      <li>Gramado e Canela</li>
-    </ul>
+    <div class="destinos-container">
+        <div class="destino">
+            <p>Fernando de Noronha</p>
+            <a href="#contato"><img src="https://guiaderodas.com/wp-content/uploads/2021/06/Fernando-de-Noronha-acessibilidade.png" alt="Fernando-de-Noronha"></a>
+        </div>
+        <div class="destino">
+            <p>Chapada Diamantina</p>
+            <img src="https://imgmd.net/images/v1/guia/1684111/chapadadiamantina-221-c.jpg" alt="chapadadiamantina-221-c">
+        </div>
+        <div class="destino">
+            <p>Gramado e Canela</p>
+            <img src="https://images.squarespace-cdn.com/content/v1/52c0b141e4b0b87925bacd01/1632943360261-TTRHN1Z1FYQFCBO71NCA/Roteiro+Gramado+Canela+4+dias" alt="Gramado-e-Canela">
+        </div> 
+    </div>
   </section>
 
-  <!-- Formulário de Contato -->
   <section id="contato">
     <h2>Contato</h2>
     <form action="#" method="post">
@@ -59,9 +64,8 @@
     </form>
   </section>
 
-  <!-- Rodapé opcional -->
   <footer>
-    <p>2025 Turismo Personalizado. Todos os direitos reservados.</p>
+    <p>Footer com Tag's<br>para direitos reservados.</p>
   </footer>
 
 </body>
