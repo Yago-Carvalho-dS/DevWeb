@@ -77,7 +77,7 @@ img {
     color: black;
     cursor: pointer;
     transition: 0.3s;
-    margin-bottom: 20px;
+    margin-top: auto;
 }
 
 .button button:hover {
@@ -95,6 +95,7 @@ h3 {
 }
 
 footer {
+    margin-top: auto;
     position: absolute;
     bottom: 100px;
     width: 100%;
