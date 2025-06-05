@@ -1,0 +1,145 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5; /* Um cinza claro */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha ao topo para não centralizar verticalmente em telas grandes */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box; /* Garante que padding não adicione largura extra */
+}
+
+#app-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Largura máxima para o container principal */
+    margin: 20px 0; /* Margem superior e inferior */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#add-task-section {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+    gap: 10px; /* Espaçamento entre os elementos */
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#task-input,
+#due-date-input {
+    flex-grow: 1; /* Permite que os inputs ocupem o máximo de espaço */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#add-task-button {
+    padding: 12px 20px;
+    background-color: #5926ea; /* Seu roxo */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+#add-task-button:hover {
+    background-color: #4a1fcc; /* Um roxo mais escuro no hover */
+}
+
+#tasks-display-area {
+    background-color: #fefefe; /* Fundo levemente diferente para a área da lista */
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna para dar profundidade */
+    margin-top: 20px; /* Espaçamento entre a área de adicionar e a lista */
+}
+
+h2 {
+    color: #444;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+#task-list {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para cada item da tarefa (li) */
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #5926ea; /* Seu roxo */
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+#task-list li:last-child {
+    margin-bottom: 0; /* Remove margem do último item */
+}
+
+#task-list li:hover {
+    transform: translateY(-2px); /* Pequeno efeito de elevação no hover */
+}
+
+#task-list li span:first-child {
+    flex-grow: 1;
+    word-break: break-word; /* Quebra palavras longas para evitar overflow */
+}
+
+#task-list li span:last-child { /* Para a data */
+    font-size: 0.9em;
+    opacity: 0.8; /* Levemente mais transparente */
+    margin-left: 15px;
+    white-space: nowrap; /* Evita que a data quebre linha antes do botão */
+}
+
+#task-list button {
+    background-color: #dc3545; /* Vermelho padrão para deletar */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+#task-list button:hover {
+    background-color: #c82333; /* Vermelho mais escuro no hover */
+}
+
+/* Responsividade básica */
+@media (max-width: 480px) {
+    #add-task-section {
+        flex-direction: column; /* Inputs e botão empilham em telas pequenas */
+    }
+    #add-task-button {
+        width: 100%; /* Botão ocupa toda a largura */
+    }
+}
