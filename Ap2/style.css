@@ -1,0 +1,337 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#background-video {
+    position: fixed; /* Fixa o vídeo na tela, independente da rolagem */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; /* Garante que o vídeo ocupe toda a largura */
+    min-height: 100%; /* Garante que o vídeo ocupe toda a altura */
+    width: auto;
+    height: auto;
+    z-index: -100; /* COLOCA O VÍDEO BEM NO FUNDO, ATRÁS DE TUDO */
+    background-size: cover; /* Garante que o vídeo cubra toda a área */
+    overflow: hidden; /* Esconde qualquer parte do vídeo que vazar */
+    filter: brightness(70%); /* Opcional: Escurece o vídeo um pouco para melhorar o contraste do texto */
+}
+
+/* Overlay para escurecer o vídeo e melhorar a legibilidade do texto */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Cor preta com 30% de opacidade */
+    z-index: -99; /* Fica acima do vídeo, mas abaixo de todo o resto */
+}
+
+/* Fundo com gradient moderno */
+body {
+    height: 100vh;
+    /* Remove o background gradient, pois o vídeo será o novo fundo */
+    background: transparent; /* Ou remova a propriedade background completamente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #FFF; /* Mude a cor do texto principal para branco ou uma cor clara */
+    position: relative; /* Importante para o z-index dos outros elementos */
+    z-index: 1; /* Garante que o conteúdo fique acima do overlay e do vídeo */
+}
+
+/* Audio */
+#toggle-music-btn {
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 20px;    /* 20px do fundo */
+    right: 20px;     /* 20px da direita */
+    z-index: 1000;   /* Garante que fique acima de outros elementos */
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #6a5acd; /* Cor roxa, por exemplo */
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+#toggle-music-btn:hover {
+    background-color: #5a4b9c;
+}
+
+/* Título */
+h1,
+#current-question h3,
+#profileResult,
+#investmentRecommendation {
+    color: #FFF; /* Branco para melhor contraste com o vídeo de fundo */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para melhorar legibilidade */
+}
+
+/* Estilo da div principal (quiz-container) */
+#quiz-container {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 600px; /* Largura fixa para desktop */
+    height: 600px; /* Altura fixa para desktop */
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens verticalmente */
+    justify-content: center; /* Espaça os itens verticalmente */
+    text-align: center; /* Centraliza o texto dentro da div */
+}
+
+/* Estilo para a pergunta atual */
+#current-question {
+    padding: 1rem;
+    margin-bottom: 1rem; /* Espaçamento entre a pergunta e as opções */
+    width: 80%; /* Largura para não ocupar toda a div principal */
+}
+
+#current-question h3 {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* Container para as opções */
+#options-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ocupa toda a largura da div principal */
+    padding: 0 2rem; /* Adiciona um pouco de padding lateral */
+}
+
+/* Estilo para cada item de opção */
+.option-item {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    transition: background 0.2s ease, transform 0.1s ease;
+    width: 100%; /* Opções ocupam toda a largura do container */
+}
+
+.option-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.option-item input[type="radio"] { /* CORRIGIDO AQUI! */
+    margin-right: 0.8rem;
+    appearance: none; /* Oculta o rádio padrão */
+    width: 18px;
+    height: 18px;
+    border: 2px solid #1e90ff;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.option-item input[type="radio"]:checked { /* CORRIGIDO AQUI! */
+    background-color: #1e90ff;
+    border-color: #1e90ff;
+}
+
+.option-item input[type="radio"]:checked::before { /* CORRIGIDO AQUI! */
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.option-item label {
+    cursor: pointer;
+    font-size: 1.1rem;
+    flex-grow: 1;
+    text-align: left;
+    color: #eee;
+}
+
+/* Botões */
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+button:hover {
+    background: #1c7ed6;
+}
+
+/* Resultados */
+#result-container {
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+#profileResult,
+#investmentRecommendation {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+/* Estilo para os balões de sugestão */
+#investment-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.investment-bubble {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 120px;
+}
+
+.investment-bubble strong {
+    font-size: 1.1rem;
+    color: #ADD8E6;
+    margin-bottom: 0.3rem;
+}
+
+.daily-change {
+    font-weight: bold;
+}
+
+.daily-change.positive {
+    color: #28a745;
+}
+
+.daily-change.negative {
+    color: #dc3545;
+}
+
+/* Esconder o quiz container e mostrar o resultado ao final */
+body.quiz-finished #quiz-container,
+body.quiz-finished #next-question-btn,
+body.quiz-finished #calculate-profile-btn {
+    display: none !important;
+}
+
+body.quiz-finished #result-container {
+    display: block !important;
+}
+
+/* Oculta os botões "Próxima Pergunta" e "Descobrir Perfil" inicialmente */
+#next-question-btn,
+#calculate-profile-btn {
+    display: none;
+}
+
+/* Media query para mobile first */
+@media (max-width: 600px) {
+    #quiz-container {
+        width: 95%; /* Largura para ocupar a maioria da tela em mobile */
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+        padding: 1.5rem;
+        justify-content: flex-start; /* Alinha os itens ao topo em mobile */
+    }
+
+    #current-question {
+        width: 100%; /* Ocupa toda a largura em mobile */
+        margin-bottom: 1.5rem;
+    }
+
+    #options-container {
+        padding: 0; /* Remove padding lateral em mobile para as opções ocuparem toda a largura */
+    }
+
+    .option-item {
+        padding: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    #result-container {
+        max-width: 90%;
+        width: 90%;
+        padding: 1rem;
+    }
+
+    #profileResult,
+    #investmentRecommendation {
+        font-size: 1rem;
+    }
+
+    #investment-suggestions {
+        gap: 0.8rem;
+    }
+
+    .investment-bubble {
+        min-width: 100px;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .investment-bubble strong {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+    #background-video {
+        /* Em mobile, pode ser melhor não aplicar o filter de brilho ou ajustá-lo */
+        filter: brightness(80%); /* Mais claro em mobile, talvez? */
+    }
+    .video-overlay {
+        background-color: rgba(0, 0, 0, 0.4); /* Um pouco mais escuro em mobile */
+    }
+}

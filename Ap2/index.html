@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra seu Perfil de Investidor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline id="background-video">
+        <source src="video/video-1.mp4" type="video/mp4">
+        <source src="video/video-1.mp4" type="video/webm">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <h1>Descubra seu Perfil de Investidor</h1>
+    <p> Hora de ficar Rico, Jonh! </p>
+    <p style="margin-bottom: 1rem;"> Da o play na musiquinha e responda com calma... </p>
+
+    <div id="quiz-container">
+        <div id="current-question">
+        </div>
+        <div id="options-container">
+        </div>
+        <button id="next-question-btn" style="display: none;">Próxima Pergunta</button>
+    </div>
+
+    <button id="calculate-profile-btn" style="display: none;">Descobrir Perfil</button>
+
+    <div id="result-container" style="display: none;">
+        <p id="profileResult"></p>
+        <p id="investmentRecommendation"></p>
+        <div id="apiInvestmentData">
+            <div id="investment-suggestions"></div>
+        </div>
+    </div>
+
+    <button id="toggle-music-btn">Ativar Música</button>
+
+    <audio id="background-music" loop muted>
+        <source src="audio/song.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
