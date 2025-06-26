@@ -83,6 +83,7 @@ const resultContainer = document.getElementById("result-container");
 const profileResultEl = document.getElementById("profileResult");
 const investmentRecommendationEl = document.getElementById("investmentRecommendation");
 const investmentSuggestionsDiv = document.getElementById("investment-suggestions");
+const investmentSearch = document.getElementById("filtro-investimentos");
 
 // --- 5. Funções do Quiz ---
 
@@ -287,7 +288,42 @@ async function fetchDailyChanges(tickers, profile) {
     investmentSuggestionsDiv.innerHTML = '<h3>Sugestões de Investimento:</h3>' + bubbleHtmls.join('');
 }
 
+// ---8. AS 26/06/25 ---
 
+// Criando funcao para manipular Input
+    const suggestionsList = document.getElementById('suggestionsList');
+    // Função para renderizar todos os produtos na lista
+    function renderizarLista() {
+      suggestionsList.innerHTML = '';
+      Object.entries(investmentSuggestions).forEach(([perfil, acoes]) => {
+        acoes.forEach(nome => {
+          const li = document.createElement('li');
+          li.className = 'suggestion';
+          li.textContent = `${nome} (${perfil})`;
+          suggestionsList.appendChild(li);
+        });
+      });
+    }
+
+    // Função de filtro com evento
+    async function buscarProdutos() {
+      try {
+        investmentSearch.addEventListener('input', () => {
+          const texto = investmentSearch.value.toLowerCase();
+          const itens = document.querySelectorAll('.suggestion');
+          itens.forEach(item => {
+            const nome = item.textContent.toLowerCase();
+            item.style.display = nome.includes(texto) ? '' : 'none';
+          });
+        });
+      } catch (erro) {
+        console.error('Erro ao buscar produtos:', erro);
+      }
+    }
+
+    renderizarLista();
+    buscarProdutos();
+    
 // --- 7. Inicialização e Event Listeners ---
 
 // Quando a página carregar, renderiza a primeira pergunta
