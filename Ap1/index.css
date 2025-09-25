@@ -150,7 +150,8 @@
   }
   
   img:hover {
-    height: 230px;
-    width: 95%;
+    width: 260px;
+    height: 260px;
+    transition: height 0.3s, width 0.3s;
   }
   
