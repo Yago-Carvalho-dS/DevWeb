@@ -68,6 +68,8 @@ const investmentSuggestions = {
     Arrojado: ['MGLU3.SA', 'IRBR3.SA', 'CVCB3.SA'] // Empresas com maior volatilidade/potencial de crescimento
 };
 
+// ...existing code...
+
 // --- 3. Variáveis de Estado do Quiz ---
 let currentQuestionIndex = 0;
 let totalScore = 0;
@@ -83,7 +85,6 @@ const resultContainer = document.getElementById("result-container");
 const profileResultEl = document.getElementById("profileResult");
 const investmentRecommendationEl = document.getElementById("investmentRecommendation");
 const investmentSuggestionsDiv = document.getElementById("investment-suggestions");
-const investmentSearch = document.getElementById("filtro-investimentos");
 
 // --- 5. Funções do Quiz ---
 
@@ -304,25 +305,7 @@ async function fetchDailyChanges(tickers, profile) {
         });
       });
     }
-
-    // Função de filtro com evento
-    async function buscarProdutos() {
-      try {
-        investmentSearch.addEventListener('input', () => {
-          const texto = investmentSearch.value.toLowerCase();
-          const itens = document.querySelectorAll('.suggestion');
-          itens.forEach(item => {
-            const nome = item.textContent.toLowerCase();
-            item.style.display = nome.includes(texto) ? '' : 'none';
-          });
-        });
-      } catch (erro) {
-        console.error('Erro ao buscar produtos:', erro);
-      }
-    }
-
     renderizarLista();
-    buscarProdutos();
     
 // --- 7. Inicialização e Event Listeners ---
 
